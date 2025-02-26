@@ -91,7 +91,7 @@ export default function Chat({ Person, commonQuestions }: ChatComponentProps) {
       </CardHeader>
 
       {/* Chat Messages */}
-      <CardContent>
+      <CardContent className="">
         <ScrollArea
           ref={chatRef}
           className="h-96 overflow-y-auto p-2 space-y-3 bg-gray-800 rounded-lg border border-gray-700 my-auto"
@@ -101,7 +101,7 @@ export default function Chat({ Person, commonQuestions }: ChatComponentProps) {
               key={index}
               className={`flex ${
                 msg.role === "user" ? "justify-end" : "justify-start"
-              }`}
+              } p-3 space-y-3 mb-3 mt-3`}
             >
               <div
                 className={`p-3 rounded-xl max-w-[75%] ${
