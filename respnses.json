@@ -1,0 +1,14 @@
+[
+  {
+    "role": "user",
+    "content": "Who is the founder of Maratha Empire? Just tell his name"
+  },
+  {
+    "role": "assistant",
+    "content": "Who is the founder of Maratha Empire? Just tell his name"
+  },
+  {
+    "role": "assistant",
+    "content": "Shivaji Maharaj"
+  }
+]
