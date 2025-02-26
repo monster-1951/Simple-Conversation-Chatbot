@@ -30,8 +30,8 @@ interface MessageObject {
   id: string[];
   kwargs: {
     content: string;
-    additional_kwargs: Record<string, any>;
-    response_metadata: Record<string, any>;
+    additional_kwargs: Record<string, unknown>;
+    response_metadata: Record<string, unknown>;
     id: string;
   };
 }
