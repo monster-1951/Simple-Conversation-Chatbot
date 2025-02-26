@@ -37,13 +37,7 @@ const app = workflow.compile({ checkpointer: memory });
 export async function POST(req: Request) {
   const { input } = await req.json();
   const response = await app.invoke({ messages: input }, config);
-   // Ensure messages exist and filter out any undefined ones
-  //  const formattedMessages = response.messages
-  //  .filter((msg: any) => msg.kwargs?.content) // Exclude messages without content
-  //  .map((msg: any) => ({
-  //    role: msg.id?.includes("AIMessage") ? "assistant" : "user",
-  //    content: msg.kwargs?.content, // Default to empty string if undefined
-  //  }));
+
 
  return Response.json({ messages: response.messages });
 }

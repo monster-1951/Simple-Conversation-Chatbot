@@ -10,7 +10,6 @@ import {
 } from "@langchain/langgraph";
 import { v4 as uuidv4 } from "uuid";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import { memo } from "react";
 
 const trimmer = trimMessages({
   maxTokens: 10,

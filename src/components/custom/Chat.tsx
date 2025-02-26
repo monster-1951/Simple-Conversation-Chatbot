@@ -24,6 +24,18 @@ interface Message {
   role: "user" | "assistant";
   content: string;
 }
+interface MessageObject {
+  lc: number;
+  type: string;
+  id: string[];
+  kwargs: {
+    content: string;
+    additional_kwargs: Record<string, any>;
+    response_metadata: Record<string, any>;
+    id: string;
+  };
+}
+
 
 interface ChatComponentProps {
   Person: "Assistant" | "Pirate" | "Krishna";
@@ -56,7 +68,7 @@ export default function Chat({ Person, commonQuestions }: ChatComponentProps) {
         input: userMessage,
       });
       if (response.data?.messages) {
-        const aiResponses = response.data.messages.map((msg: any) => ({
+        const aiResponses = response.data.messages.map((msg: MessageObject) => ({
           role: msg.id[2] === "HumanMessage" ? "user" : "assistant",
           content: msg.kwargs.content,
         }));
